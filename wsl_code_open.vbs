@@ -10,7 +10,8 @@ End If
 distroName = GetDefaultDistro()
 targetDir = WScript.Arguments(0)
 targetDir = NormalizeWslPath(targetDir, distroName)
-CreateObject("Shell.Application").ShellExecute "Code.exe", "--remote " & Quote("wsl+" & distroName) & " " & Quote(wslPath), "", "open", 0
+command = "wsl.exe --cd " & Quote(targetDir) & " sh -lc " & Quote("code .")
+shell.Run command, 0, False
 
 Function GetDefaultDistro()
   Dim exec, output
