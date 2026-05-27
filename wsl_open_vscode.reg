@@ -1,0 +1,21 @@
+Windows Registry Editor Version 5.00
+
+; ============================================================
+; Add "Open in WSL with VS Code" to folder right-click menu
+; ============================================================
+
+; Right-click on a folder icon
+[HKEY_CLASSES_ROOT\Directory\shell\WSLVSCode]
+@="Open in WSL with VS Code"
+"Icon"="C:\\Users\\%USERNAME%\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\WSLVSCode\command]
+@="wsl.exe --cd \"%1\" -- code ."
+
+; Right-click on folder background (empty space inside a folder)
+[HKEY_CLASSES_ROOT\Directory\Background\shell\WSLVSCode]
+@="Open in WSL with VS Code"
+"Icon"="C:\\Users\\%USERNAME%\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\WSLVSCode\command]
+@="wsl.exe --cd \"%V\" -- code ."

@@ -1,0 +1,21 @@
+Windows Registry Editor Version 5.00
+
+; ============================================================
+; Add "Open in WSL" to folder right-click context menu
+; ============================================================
+
+; Right-click on a folder icon
+[HKEY_CLASSES_ROOT\Directory\shell\WSLTerminal]
+@="Open in WSL"
+"Icon"="C:\\Windows\\System32\\wsl.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\WSLTerminal\command]
+@="wsl.exe --cd \"%1\""
+
+; Right-click on folder background (empty space inside a folder)
+[HKEY_CLASSES_ROOT\Directory\Background\shell\WSLTerminal]
+@="Open in WSL"
+"Icon"="C:\\Windows\\System32\\wsl.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\WSLTerminal\command]
+@="wsl.exe --cd \"%V\""
