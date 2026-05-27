@@ -14,18 +14,26 @@ echo  WSL Context Menu Importer
 echo ============================================
 echo.
 
-rem --- ���� VBS �����ű� ---
+rem --- 复制 VBS 脚本 ---
 set "vbsDir=%LOCALAPPDATA%\WSLTools"
-set "vbsSrc=%~dp0wsl_code_open.vbs"
-set "vbsDst=%vbsDir%\wsl_code_open.vbs"
+set "vbsCodeSrc=%~dp0wsl_code_open.vbs"
+set "vbsCodeDst=%vbsDir%\wsl_code_open.vbs"
+set "vbsTermSrc=%~dp0wsl_open_terminal.vbs"
+set "vbsTermDst=%vbsDir%\wsl_open_terminal.vbs"
 
-echo [1/4] Copying wsl_code_open.vbs ...
+echo [1/4] Copying VBS scripts ...
 if not exist "%vbsDir%" mkdir "%vbsDir%"
-if exist "%vbsSrc%" (
-    copy /Y "%vbsSrc%" "%vbsDst%" >nul
-    if !errorlevel! equ 0 (echo   ^> VBS copied) else (echo   ^> VBS FAILED)
+if exist "%vbsCodeSrc%" (
+    copy /Y "%vbsCodeSrc%" "%vbsCodeDst%" >nul
+    if !errorlevel! equ 0 (echo   ^> wsl_code_open.vbs copied) else (echo   ^> wsl_code_open.vbs FAILED)
 ) else (
     echo   ^> wsl_code_open.vbs not found, skipping
+)
+if exist "%vbsTermSrc%" (
+    copy /Y "%vbsTermSrc%" "%vbsTermDst%" >nul
+    if !errorlevel! equ 0 (echo   ^> wsl_open_terminal.vbs copied) else (echo   ^> wsl_open_terminal.vbs FAILED)
+) else (
+    echo   ^> wsl_open_terminal.vbs not found, skipping
 )
 
 echo.
