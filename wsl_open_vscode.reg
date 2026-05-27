@@ -7,15 +7,13 @@ Windows Registry Editor Version 5.00
 ; Right-click on a folder icon
 [HKEY_CLASSES_ROOT\Directory\shell\WSLVSCode]
 @="Open in WSL with VS Code"
-"Icon"="C:\\Users\\%USERNAME%\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
 
 [HKEY_CLASSES_ROOT\Directory\shell\WSLVSCode\command]
-@="wsl.exe --cd \"%1\" -- code ."
+@=hex(2):77,00,73,00,63,00,72,00,69,00,70,00,74,00,2e,00,65,00,78,00,65,00,20,00,22,00,25,00,4c,00,4f,00,43,00,41,00,4c,00,41,00,50,00,50,00,44,00,41,00,54,00,41,00,25,00,5c,00,57,00,53,00,4c,00,54,00,6f,00,6f,00,6c,00,73,00,5c,00,77,00,73,00,6c,00,5f,00,63,00,6f,00,64,00,65,00,5f,00,6f,00,70,00,65,00,6e,00,2e,00,76,00,62,00,73,00,22,00,20,00,22,00,25,00,31,00,22,00,00,00
 
 ; Right-click on folder background (empty space inside a folder)
 [HKEY_CLASSES_ROOT\Directory\Background\shell\WSLVSCode]
 @="Open in WSL with VS Code"
-"Icon"="C:\\Users\\%USERNAME%\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
 
 [HKEY_CLASSES_ROOT\Directory\Background\shell\WSLVSCode\command]
-@="wsl.exe --cd \"%V\" -- code ."
+@=hex(2):77,00,73,00,63,00,72,00,69,00,70,00,74,00,2e,00,65,00,78,00,65,00,20,00,22,00,25,00,4c,00,4f,00,43,00,41,00,4c,00,41,00,50,00,50,00,44,00,41,00,54,00,41,00,25,00,5c,00,57,00,53,00,4c,00,54,00,6f,00,6f,00,6c,00,73,00,5c,00,77,00,73,00,6c,00,5f,00,63,00,6f,00,64,00,65,00,5f,00,6f,00,70,00,65,00,6e,00,2e,00,76,00,62,00,73,00,22,00,20,00,22,00,25,00,56,00,22,00,00,00
